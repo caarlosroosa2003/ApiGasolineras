@@ -1,0 +1,20 @@
+
+
+<div class="card w-96 h-56  bg-base-100 shadow-xl">
+  <div class="card-header flex justify-center pt-2">
+    <h2 class="card-title">{{gasolinera["Dirección"]}}!</h2>
+  </div>
+  <div class="card-body">
+    @if (gasolinera['Precio Gasoleo A']!="") {
+      <p>Precio Gasoleo A: {{gasolinera['Precio Gasoleo A']}}</p>
+    }
+    @if (gasolinera['Precio Gasolina 98 E5']!="") {
+      <p>Precio Gasolina 98 E5:{{gasolinera['Precio Gasolina 98 E5']}}</p>
+      
+    }
+    @if (gasolinera['Precio Gasolina 95 E5']!="") {
+      <p>Precio Gasolina 95 E5:{{gasolinera['Precio Gasolina 95 E5']}}</p>
+    }
+    
+  </div>
+</div>

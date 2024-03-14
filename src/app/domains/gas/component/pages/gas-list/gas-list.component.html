@@ -1,0 +1,32 @@
+  <div class="flex h-screen flex-row w-full gap-1 mb-8 bg-black" >
+    <div class="h-full w-1/3 flex flex-col items-center pt-10 gap-3 bg-cover" style="background-image: url(https://i.pinimg.com/736x/1d/46/be/1d46be6a25ad3e7a06a7ab33d6e17788.jpg);">
+      <p class="text-4xl font-bold text-white">Gasolineras en España</p>
+      <select class="select select-info w-full max-w-xs" name="select" (change)=" onChangeCCAA($event)">
+        <option selected>Selecciona comunidad autónoma</option>
+        @for (item of listadoCCAA(); track $index) {
+          <option [value]="item.IDCCAA">{{item.CCAA}}</option>
+        }
+      </select>
+
+      <select class="select select-info w-full max-w-xs" name="select" (change)=" onChangeProvincia($event)">
+        <option selected>Selecciona provincia</option>
+        @for (item of listadoProvincias(); track $index) {
+          <option [value]="item.IDPovincia">{{item.Provincia}}</option>
+        }
+      </select>
+
+      <select class="select select-info w-full max-w-xs" name="select" (change)=" onChangeMunicipio($event)">
+        <option selected>Selecciona municipio</option>
+        @for (item of listadoMunicipios(); track $index) {
+          <option [value]="item.IDMunicipio">{{item.Municipio}}</option>
+        }
+      </select>
+
+    </div>
+
+<div class="h-full w-full grid grid-cols-3 justify-items-center gap-1 pt-4 pb-4 overflow-y-scroll bg-cover" style="background-image: url(https://images.pexels.com/photos/399635/pexels-photo-399635.jpeg?cs=srgb&dl=pexels-jonathan-petersson-399635.jpg&fm=jpg);">
+  @for (item of listadoPorMunicipio(); track $index) {
+    <app-gasolinera [gasolinera]="item"></app-gasolinera>
+}
+</div>
+
